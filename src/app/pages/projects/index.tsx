@@ -1,9 +1,9 @@
 // Projects.tsx
 import React, { useState, useEffect } from 'react';
-import { getGitHubRepos } from '../../services/api/github-api/githubApi';
+import { getGitHubRepos } from '@/app/services/api/github-api/githubApi';
 
 // Components
-import ProjectCard from '../../components/project-card/project-card';
+import ProjectCard from '@/app/components/project-card/project-card';
 
 interface GitHubRepo {
     id: number;

@@ -1,7 +1,7 @@
 // Experience.tsx
 import React from "react";
 import ExperienceCard from '@/app/components/experience-card/experience-card';
-import { experienceData } from '../../data/ExperienceData';
+import { experienceData } from '@/app/data/ExperienceData';
 
 export default function Experience() {
     return (

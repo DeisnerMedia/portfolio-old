@@ -19,7 +19,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ name, description, html_url }
                 alt={name}
                 className="mt-2 cursor-zoom-in"
             />
-            <div className="mt-3">
+            <div className="mt-3 ">
                 <button className="bg-amber-600 hover:bg-amber-500 text-white font-bold py-2 px-4 rounded mt-2 mr-5">
                     <a href={html_url} target="_blank" rel="noopener noreferrer">
                         <FaGithub className="inline-block mr-2 text-2xl" />

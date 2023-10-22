@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Logo from '../../assets/images/logo.png';
+import Logo from '@/app/assets/images/logo.png';
 
 export default function Navbar() {
     return (
