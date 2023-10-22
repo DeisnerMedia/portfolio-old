@@ -1,0 +1,19 @@
+/* Skills.module.css */
+
+.skillGroupCard {
+    padding: 16px;
+    margin: 16px;
+    background: black;
+    border-radius: 12px; /* Runde Ecken für den Card-Rahmen */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skillCard {
+    border: 1px solid black;
+    padding: 16px;
+    margin: 16px;
+    background: rgba(117, 113, 113, 0.12);
+    /*background: rgba(0, 140, 255, 0.24);*/
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+}
