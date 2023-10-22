@@ -40,8 +40,7 @@ export default function Projects() {
                         <ProjectCard
                             key={project.id}
                             name={project.name}
-                            description={project.description}
-                            html_url={project.html_url}
+                            githubUsername={'deisnermedia'}
                         />
                     ))}
                 </div>
