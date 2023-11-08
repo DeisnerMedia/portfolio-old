@@ -71,6 +71,12 @@ export default function Page() {
               .navbar-container.scrolled {
                 background: rgba(0, 0, 0, 0.95) !important;
               }
+              
+              @media (max-height: 770px) {
+                .navbar-container {
+                  background-color: rgba(0, 0, 0, 0.95) !important;
+                }
+              }
             `}</style>
         </main>
     );

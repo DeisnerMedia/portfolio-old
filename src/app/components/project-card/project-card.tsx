@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaGithub, FaRegEye } from "react-icons/fa6";
+import Image from "next/image";
 
 interface ProjectCardProps {
     name: string;
@@ -25,7 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ name, githubUsername }) => {
                 }
             })
             .catch((error) => console.error(error));
-    }, [name, githubUsername]);
+        }, [name, githubUsername]);
 
     useEffect(() => {
         // GitHub ReadMe-URL basierend auf dem Hauptzweig
@@ -34,26 +35,31 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ name, githubUsername }) => {
         fetch(readmeUrl)
             .then((response) => response.text())
             .then((data) => {
-                const descriptionMatch = /# (.+)\n\n(.+)/.exec(data);
-                if (descriptionMatch) {
-                    setDescription(descriptionMatch[2]);
-                } else {
-                    setDescription('Beschreibung nicht gefunden');
-                }
+                try {
+                    const descriptionMatch = /# (.+)\n\n(.+)/.exec(data);
+                    if (descriptionMatch) {
+                        setDescription(descriptionMatch[2]);
+                    } else {
+                        setDescription('Beschreibung nicht gefunden');
+                    }
 
-                const imageMatch = /!\[image\]\((.+)\)/.exec(data);
-                if (imageMatch) {
-                    setImageSrc(imageMatch[1]);
-                } else {
-                    setImageSrc('https://via.placeholder.com/900x500');
-                }
+                    const imageMatch = /!\[image\]\((.+)\)/.exec(data);
+                    if (imageMatch) {
+                        setImageSrc(imageMatch[1]);
+                    } else {
+                        setImageSrc('https://via.placeholder.com/900x500');
+                    }
 
-                // Überprüfe, ob es ein <a> mit der ID "demo" gibt
-                const demoLinkMatch = /<a id="demo" href="(.+)">Demo<\/a>/.exec(data);
-                if (demoLinkMatch) {
-                    setDemoLink(demoLinkMatch[1]);
-                } else {
-                    setDemoLink(null); // Setze den Demo-Link auf null, wenn nicht gefunden
+                    // Überprüfe, ob es ein <a> mit der ID "demo" gibt
+                    const demoLinkMatch = /<a id="demo" href="(.+)">Demo<\/a>/.exec(data);
+                    if (demoLinkMatch) {
+                        setDemoLink(demoLinkMatch[1]);
+                    } else {
+                        setDemoLink(null); // Setze den Demo-Link auf null, wenn nicht gefunden
+                    }
+                }
+                catch (error) {
+                    console.error(error);
                 }
             })
             .catch((error) => console.error(error));
@@ -61,11 +67,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ name, githubUsername }) => {
 
     return (
         <div className="border border-amber-600 p-4 rounded-lg">
-            <h2 className="text-xl font-bold">{name}</h2>
-            <p className="text-gray-600">{description}</p>
-            <img
+            <h2 className="text-3xl font-bold">{name}</h2>
+            <p className="text-gray-600 py-3">{description}</p>
+            <Image
                 src={imageSrc}
                 alt={name}
+                width={900}
+                height={500}
                 className="mt-2 cursor-zoom-in"
             />
             <div className="mt-3">

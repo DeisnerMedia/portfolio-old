@@ -41,19 +41,18 @@ interface SkillCardProps {
     skillName: string;
     logoSrc: StaticImageData;
     logoWidth: number;
-    logoHeight: number;
 }
 
-const SkillCard: React.FC<SkillCardProps> = ({ skillName, logoSrc, logoWidth, logoHeight }) => (
+const SkillCard: React.FC<SkillCardProps> = ({ skillName, logoSrc, logoWidth }) => (
     <div className={`max-w-md p-4 border rounded-lg shadow-lg mx-4 my-4 flex flex-col items-center ${styles.skillCard}`}>
-        <Image src={logoSrc} alt={skillName} width={logoWidth} height={logoHeight} className="mb-3"/>
+        <Image src={logoSrc} alt={skillName} width={logoWidth} className="mb-3"/>
         <span className={`mt-auto font-bold text-xl text-white ${styles.skillText}`}>{skillName}</span>
     </div>
 );
 
 interface SkillGroupProps {
     groupName: string;
-    skills: { skillName: string; logoSrc: StaticImageData; logoWidth: number; logoHeight: number }[];
+    skills: { skillName: string; logoSrc: StaticImageData; logoWidth: number; }[];
 }
 
 const SkillGroup: React.FC<SkillGroupProps> = ({ groupName, skills }) => (
@@ -68,7 +67,6 @@ const SkillGroup: React.FC<SkillGroupProps> = ({ groupName, skills }) => (
                     skillName={skill.skillName}
                     logoSrc={skill.logoSrc}
                     logoWidth={skill.logoWidth}
-                    logoHeight={skill.logoHeight}
                 />
             ))}
         </div>
@@ -77,47 +75,47 @@ const SkillGroup: React.FC<SkillGroupProps> = ({ groupName, skills }) => (
 
 export default function Skills() {
     const frontendSkills = [
-        { skillName: "React", logoSrc: ReactLogo, logoWidth: 80, logoHeight: 80 },
-        { skillName: "Next.js", logoSrc: NextLogo, logoWidth: 80, logoHeight: 80 },
-        { skillName: "Vue.js", logoSrc: VueLogo, logoWidth: 80, logoHeight: 80 },
-        { skillName: "Angular", logoSrc: AngularLogo, logoWidth: 80, logoHeight: 80 },
-        { skillName: "Ionic", logoSrc: IonicLogo, logoWidth: 80, logoHeight: 80 },
-        { skillName: "HTML", logoSrc: HTMLLogo, logoWidth: 80, logoHeight: 80 },
-        { skillName: "CSS", logoSrc: CSSLogo, logoWidth: 80, logoHeight: 80 },
-        { skillName: "JavaScript", logoSrc: JavaScriptLogo, logoWidth: 80, logoHeight: 80 },
-        { skillName: "TypeScript", logoSrc: TypeScriptLogo, logoWidth: 80, logoHeight: 80 },
-        { skillName: "Tailwind CSS", logoSrc: TailwindLogo, logoWidth: 120, logoHeight: 120 },
-        { skillName: "jQuery", logoSrc: jQueryLogo, logoWidth: 100, logoHeight: 100 },
-        { skillName: "PHP", logoSrc: PHPLogo, logoWidth: 200, logoHeight: 200 },
-        { skillName: "SAPUI5", logoSrc: SAPUI5Logo, logoWidth: 250, logoHeight: 250 },
+        { skillName: "React", logoSrc: ReactLogo, logoWidth: 80 },
+        { skillName: "Next.js", logoSrc: NextLogo, logoWidth: 80 },
+        { skillName: "Vue.js", logoSrc: VueLogo, logoWidth: 80 },
+        { skillName: "Angular", logoSrc: AngularLogo, logoWidth: 80 },
+        { skillName: "Ionic", logoSrc: IonicLogo, logoWidth: 80 },
+        { skillName: "HTML", logoSrc: HTMLLogo, logoWidth: 80 },
+        { skillName: "CSS", logoSrc: CSSLogo, logoWidth: 80 },
+        { skillName: "JavaScript", logoSrc: JavaScriptLogo, logoWidth: 80},
+        { skillName: "TypeScript", logoSrc: TypeScriptLogo, logoWidth: 80 },
+        { skillName: "Tailwind CSS", logoSrc: TailwindLogo, logoWidth: 120 },
+        { skillName: "jQuery", logoSrc: jQueryLogo, logoWidth: 100 },
+        { skillName: "PHP", logoSrc: PHPLogo, logoWidth: 200 },
+        { skillName: "SAPUI5", logoSrc: SAPUI5Logo, logoWidth: 250 },
     ];
 
     const backendSkills = [
-        { skillName: "Node.js", logoSrc: NodeLogo, logoWidth: 80, logoHeight: 80 },
-        { skillName: "Java", logoSrc: JavaLogo, logoWidth: 80, logoHeight: 80 },
-        { skillName: "C#", logoSrc: CSharpLogo, logoWidth: 80, logoHeight: 80 },
-        { skillName: "C", logoSrc: CLogo, logoWidth: 80, logoHeight: 80 },
-        { skillName: "Python", logoSrc: PythonLogo, logoWidth: 80, logoHeight: 80 },
-        { skillName: "MySQL", logoSrc: MySQLLogo, logoWidth: 80, logoHeight: 80 },
-        { skillName: "ABAP", logoSrc: SAPLogo, logoWidth: 200, logoHeight: 200 },
-        { skillName: "SAP HANA", logoSrc: SAPHANALogo, logoWidth: 350, logoHeight: 350 },
-        { skillName: "SAP CAP", logoSrc: SAPLogo, logoWidth: 200, logoHeight: 200 },
+        { skillName: "Node.js", logoSrc: NodeLogo, logoWidth: 80 },
+        { skillName: "Java", logoSrc: JavaLogo, logoWidth: 80 },
+        { skillName: "C#", logoSrc: CSharpLogo, logoWidth: 80 },
+        { skillName: "C", logoSrc: CLogo, logoWidth: 80 },
+        { skillName: "Python", logoSrc: PythonLogo, logoWidth: 80 },
+        { skillName: "MySQL", logoSrc: MySQLLogo, logoWidth: 80 },
+        { skillName: "ABAP", logoSrc: SAPLogo, logoWidth: 200 },
+        { skillName: "SAP HANA", logoSrc: SAPHANALogo, logoWidth: 350 },
+        { skillName: "SAP CAP", logoSrc: SAPLogo, logoWidth: 200 },
     ];
 
     const devOpsSkills = [
-        { skillName: "Docker", logoSrc: DockerLogo, logoWidth: 100, logoHeight: 100 },
-        { skillName: "Git", logoSrc: GitLogo, logoWidth: 90, logoHeight: 90 },
-        { skillName: "GitHub", logoSrc: GitHubLogo, logoWidth: 120, logoHeight: 120 },
-        { skillName: "GitLab", logoSrc: GitLabLogo, logoWidth: 90, logoHeight: 90 },
+        { skillName: "Docker", logoSrc: DockerLogo, logoWidth: 100 },
+        { skillName: "Git", logoSrc: GitLogo, logoWidth: 90 },
+        { skillName: "GitHub", logoSrc: GitHubLogo, logoWidth: 120 },
+        { skillName: "GitLab", logoSrc: GitLabLogo, logoWidth: 90 },
     ];
 
     const uiUxSkills = [
-        { skillName: "Figma", logoSrc: FigmaLogo, logoWidth: 70, logoHeight: 70 },
-        { skillName: "Adobe XD", logoSrc: AdobeXDLogo, logoWidth: 80, logoHeight: 80 },
-        { skillName: "Adobe Photoshop", logoSrc: PhotoshopLogo, logoWidth: 80, logoHeight: 80 },
-        { skillName: "Adobe Illustrator", logoSrc: IllustratorLogo, logoWidth: 80, logoHeight: 80 },
-        { skillName: "Adobe After Effects", logoSrc: AfterEffectsLogo, logoWidth: 80, logoHeight: 80 },
-        { skillName: "Adobe Premiere Pro", logoSrc: PremiereProLogo, logoWidth: 80, logoHeight: 80 },
+        { skillName: "Figma", logoSrc: FigmaLogo, logoWidth: 70 },
+        { skillName: "Adobe XD", logoSrc: AdobeXDLogo, logoWidth: 80 },
+        { skillName: "Adobe Photoshop", logoSrc: PhotoshopLogo, logoWidth: 80 },
+        { skillName: "Adobe Illustrator", logoSrc: IllustratorLogo, logoWidth: 80 },
+        { skillName: "Adobe After Effects", logoSrc: AfterEffectsLogo, logoWidth: 80 },
+        { skillName: "Adobe Premiere Pro", logoSrc: PremiereProLogo, logoWidth: 80 },
     ];
 
     return (
