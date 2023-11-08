@@ -2,7 +2,7 @@ import React from "react";
 
 export default function About() {
     return (
-        <div className="flex justify-center items-center mt-32">
+        <div className="flex justify-center items-center mt-32 relative">
             <div className="p-8 mx-auto">
                 <h1 className="text-5xl md:text-7xl font-bold mb-4 text-center">
                     About <span className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-amber-600 via-orange-400 to-yellow-500 text-transparent bg-clip-text">Me</span>

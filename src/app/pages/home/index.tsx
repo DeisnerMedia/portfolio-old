@@ -28,20 +28,19 @@ export default function Home() {
                         </button>
                     </a>
                 </div>
-            </div>
+                <div className="absolute justify-center bottom-10" style={{ zIndex: 2 }}>
+                    <div className="flex justify-center space-x-20">
+                        <a href="https://www.linkedin.com/in/dominik-deisner/" target="_blank" rel="noopener noreferrer">
+                            <FaLinkedin className="text-7xl text-gray-300 hover:text-blue-500" />
+                        </a>
+                        <a href="https://github.com/DeisnerMedia" target="_blank" rel="noopener noreferrer">
+                            <FaSquareGithub className="text-7xl text-gray-300 hover:text-amber-600" />
+                        </a>
+                    </div>
+                </div>
+                </div>
             <div className="overflow-hidden hidden md:block text-right" style={{ zIndex: 1, maxWidth: '100%', position: 'absolute', right: 0 }}>
                 <Spline scene="https://prod.spline.design/yoQ4BaAHXEuUokSd/scene.splinecode" style={{ width: '1000px', height: '700px' }} />
-            </div>
-
-            <div className="absolute inset-x-0 bottom-32 flex justify-center" style={{ zIndex: 2 }}>
-                <div className="flex justify-center space-x-20">
-                    <a href="https://www.linkedin.com/in/dominik-deisner/" target="_blank" rel="noopener noreferrer">
-                        <FaLinkedin className="text-7xl text-gray-300 hover:text-blue-500" />
-                    </a>
-                    <a href="https://github.com/DeisnerMedia" target="_blank" rel="noopener noreferrer">
-                        <FaSquareGithub className="text-7xl text-gray-300 hover:text-amber-600" />
-                    </a>
-                </div>
             </div>
         </div>
     );
