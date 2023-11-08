@@ -79,14 +79,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ name, githubUsername }) => {
             <div className="mt-3">
                 <button className="bg-amber-600 hover-bg-amber-500 text-white font-bold py-2 px-4 rounded mt-2 mr-5">
                     <a href={`https://github.com/${githubUsername}/${name}`} target="_blank" rel="noopener noreferrer">
-                        <FaGithub className="inline-block mr-2 text-2xl" />
+                        <FaGithub className="inline-block mr-2 text-2xl -translate-y-0.5" />
                         View Project
                     </a>
                 </button>
                 {demoLink && (
                     <button className="bg-amber-600 hover-bg-amber-500 text-white font-bold py-2 px-4 rounded mt-2">
                         <a href={demoLink} target="_blank" rel="noopener noreferrer">
-                            <FaRegEye className="inline-block mr-2 text-2xl" />
+                            <FaRegEye className="inline-block mr-2 text-2xl -translate-y-0.5" />
                             View Demo
                         </a>
                     </button>
