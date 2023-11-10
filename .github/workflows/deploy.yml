@@ -23,6 +23,7 @@ jobs:
             cd tempPortfolio
             git clone git@github.com:DeisnerMedia/portfolio.git
             cd portfolio
+            nvm install 16.20.2
             npm install
             npm run build
             ls
