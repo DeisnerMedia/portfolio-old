@@ -30,8 +30,6 @@ jobs:
             git clone git@github.com:DeisnerMedia/portfolio.git
             cd portfolio
             npm install
-            npm install 18.18.2
-            npm install
             npm install next
-            npm run build
+            npx -p node@18.18.2 npm run build
             ls
