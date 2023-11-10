@@ -27,11 +27,11 @@ export default function Navbar() {
             <div className="container mx-auto flex justify-between items-center py-8">
                 <div className="ml-10">
                     <Link href="/">
-                        <Image src={Logo} alt="Logo" width={70} height={70}/>
+                        <Image src={Logo} alt="Logo" width={50} className="hover:opacity-60 active:opacity-30"/>
                     </Link>
                 </div>
                 <div className="lg:flex space-x-20 text-2xl text-amber-400 navigation-extended">
-                    <NavItem href="#home" text="Home" />
+                    <NavItem href="#" text="Home" />
                     <NavItem href="#about" text="About" />
                     <NavItem href="#experience" text="Experience" />
                     <NavItem href="#skills" text="Skills" />
@@ -48,7 +48,7 @@ export default function Navbar() {
                     </g>
                 </svg>
                 <div className={`flex navigation-hamburger text-5xl justify-center items-center flex-col gap-10 ${isMenuOpen ? 'flex' : 'hidden'}`}>
-                    <NavItem href="#home" text="Home" closeMenu={closeMenu}/>
+                    <NavItem href="#" text="Home" closeMenu={closeMenu}/>
                     <NavItem href="#about" text="About"  closeMenu={closeMenu}/>
                     <NavItem href="#experience" text="Experience" closeMenu={closeMenu}/>
                     <NavItem href="#skills" text="Skills" closeMenu={closeMenu}/>

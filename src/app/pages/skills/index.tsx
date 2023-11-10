@@ -44,8 +44,8 @@ interface SkillCardProps {
 }
 
 const SkillCard: React.FC<SkillCardProps> = ({ skillName, logoSrc, logoWidth }) => (
-    <div className={`max-w-md p-4 border rounded-lg shadow-lg mx-4 my-4 flex flex-col items-center ${styles.skillCard}`}>
-        <Image src={logoSrc} alt={skillName} width={logoWidth} className="mb-3"/>
+    <div className={`max-w-md p-4 border rounded-lg shadow-lg mx-4 my-4 flex flex-col items-center ${styles.skillCard}`} style={{ userSelect: 'none' }}>
+        <Image src={logoSrc} alt={skillName} width={logoWidth} className="mb-3" draggable="false" />
         <span className={`mt-auto font-bold text-xl text-white ${styles.skillText}`}>{skillName}</span>
     </div>
 );
