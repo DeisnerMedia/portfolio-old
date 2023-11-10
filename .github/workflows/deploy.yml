@@ -34,6 +34,17 @@ jobs:
           cd public_html
           rm -rf tempPortfolio
           mkdir tempPortfolio
-          echo $GITHUB_WORKSPACE/*
+          echo $GITHUB_WORKSPACE/bin 
+          echo $GITHUB_WORKSPACE/dev 
+          echo $GITHUB_WORKSPACE/etc 
+          echo $GITHUB_WORKSPACE/home 
+          echo $GITHUB_WORKSPACE/lib 
+          echo $GITHUB_WORKSPACE/lib64 
+          echo $GITHUB_WORKSPACE/opt 
+          echo $GITHUB_WORKSPACE/proc 
+          echo $GITHUB_WORKSPACE/run 
+          echo $GITHUB_WORKSPACE/sbin 
+          echo $GITHUB_WORKSPACE/tmp /usr 
+          echo  $GITHUB_WORKSPACE/var
           scp -r $GITHUB_WORKSPACE/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/tempPortfolio
           ls
