@@ -34,5 +34,6 @@ jobs:
           cd public_html
           rm -rf tempPortfolio
           mkdir tempPortfolio
+          echo $GITHUB_WORKSPACE/*
           scp -r $GITHUB_WORKSPACE/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/tempPortfolio
           ls
