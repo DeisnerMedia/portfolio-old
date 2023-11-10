@@ -18,6 +18,7 @@ jobs:
           script: |
             cd public_html
             cd public_html
+            rm -rf tempPortfolio
             mkdir tempPortfolio
             cd tempPortfolio
             git clone git@github.com:DeisnerMedia/portfolio.git
