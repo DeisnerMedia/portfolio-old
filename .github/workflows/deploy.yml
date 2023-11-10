@@ -21,6 +21,12 @@ jobs:
 
     - name: Run build
       run: npm run build
+
+    - name: Archive build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-artifacts
+        path: path/to/build
       
     - name: Building Next.js application
       uses: appleboy/ssh-action@master
