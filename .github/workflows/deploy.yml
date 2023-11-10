@@ -20,6 +20,7 @@ jobs:
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             nvm install 16.20.2
+            node install 18.18.2
             cd public_html
             cd public_html
             rm -rf tempPortfolio
