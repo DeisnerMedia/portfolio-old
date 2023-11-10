@@ -30,4 +30,5 @@ jobs:
             cd portfolio
             npm install next
             npm run build
+            echo "ran build"
             ls
