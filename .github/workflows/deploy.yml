@@ -1,0 +1,32 @@
+name: Live deployment Job
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Building Next.js application
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            nvm install 16.20.2
+            cd public_html
+            cd public_html
+            rm -rf tempPortfolio
+            mkdir tempPortfolio
+            cd tempPortfolio
+            git clone git@github.com:DeisnerMedia/portfolio.git
+            cd portfolio
+            npm install next
+            npm run build
+            ls
