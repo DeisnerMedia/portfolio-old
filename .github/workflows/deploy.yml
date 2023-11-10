@@ -35,5 +35,5 @@ jobs:
           rm -rf tempPortfolio
           mkdir tempPortfolio
           cd tempPortfolio
-          scp -r $GITHUB_WORKSPACE/out/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/
+          scp -r $GITHUB_WORKSPACE/out/* :/
           ls
