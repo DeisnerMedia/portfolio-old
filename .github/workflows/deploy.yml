@@ -40,8 +40,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-  
-
     - name: Building Next.js application
       uses: appleboy/ssh-action@master
       with:
