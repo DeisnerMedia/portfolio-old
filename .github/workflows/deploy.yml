@@ -1,8 +1,10 @@
 name: Live deployment Job
+
 on:
   push:
     branches:
       - main
+
 jobs:
   build:
     name: Build
@@ -39,7 +41,7 @@ jobs:
       with:
         name: build-artifacts
         path: path/to/build  # Specify the path where artifacts will be downloaded
-      
+
     - name: Building Next.js application
       uses: appleboy/ssh-action@master
       with:
@@ -49,8 +51,7 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
         script: |
           cd public_html
-          cd public_html
           rm -rf tempPortfolio
           mkdir tempPortfolio
-          echo "Test"
+          cp -r path/to/download/* tempPortfolio  # Copy the downloaded artifacts to the desired location
           ls
