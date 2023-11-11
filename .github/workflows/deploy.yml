@@ -25,6 +25,9 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: build-artifacts
+        path: path/to/build
+        if-no-files-found: warn
+        retention-days: 7
       
     - name: Building Next.js application
       uses: appleboy/ssh-action@master
