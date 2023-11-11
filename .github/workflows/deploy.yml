@@ -25,7 +25,6 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: build-artifacts
-        path: /
       
     - name: Building Next.js application
       uses: appleboy/ssh-action@master
