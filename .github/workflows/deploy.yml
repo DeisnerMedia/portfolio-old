@@ -23,6 +23,9 @@ jobs:
         npm install
         npm run build
 
+    - name: Create build directory
+      run: mkdir -p path/to/build
+
     - name: Verify build directory
       run: |
         ls -R path/to/build
@@ -61,5 +64,5 @@ jobs:
           cd public_html
           rm -rf tempPortfolio
           mkdir tempPortfolio
-          cp -r path/to/build/* tempPortfolio  # Hier wurde der Pfad angepasst
+          cp -r path/to/build/* tempPortfolio
           ls
