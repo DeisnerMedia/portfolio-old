@@ -23,6 +23,10 @@ jobs:
         npm install
         npm run build
 
+    - name: Verify build directory
+      run: |
+        ls -R path/to/build
+
     - name: Archive build artifacts
       uses: actions/upload-artifact@v2.2.4
       with:
