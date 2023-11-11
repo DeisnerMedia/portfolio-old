@@ -38,7 +38,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: build-artifacts
-        path: path/to/download  # Specify the path where artifacts will be downloaded
+        path: path/to/build  # Specify the path where artifacts will be downloaded
       
     - name: Building Next.js application
       uses: appleboy/ssh-action@master
