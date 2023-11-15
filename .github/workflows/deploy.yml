@@ -63,6 +63,9 @@ jobs:
     - name: Show artifact contents
       run: ls -R ${{ github.workspace }}/out
 
+    - name: Display structure of downloaded files
+      run: ls -R
+      working-directory: out
 
     - name: Building Next.js application
       uses: appleboy/ssh-action@master
