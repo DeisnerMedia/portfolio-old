@@ -45,10 +45,8 @@ jobs:
         ls
     - uses: actions/upload-artifact@v3
       with:
-        name: my-artifact
+        name: build-artifact
         path: out
-        script: |
-          ls
 
   deploy:
     name: Deploy
@@ -67,5 +65,5 @@ jobs:
           cd public_html
           rm -rf tempPortfolio
           mkdir tempPortfolio
-          cp -r path/to/build/* tempPortfolio
+          cp -r out/* tempPortfolio
           ls
