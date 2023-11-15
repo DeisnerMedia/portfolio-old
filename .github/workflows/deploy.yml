@@ -65,4 +65,4 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             ls
-            deploy.sh
+            deploy.sh 
