@@ -58,7 +58,7 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: build-artifact
-        path: ${{ github.workspace }}/out
+        path: out
   
     - name: Building Next.js application
       uses: appleboy/ssh-action@master
@@ -72,5 +72,5 @@ jobs:
           rm -rf tempPortfolio
           mkdir tempPortfolio
           ls -R ${{ github.workspace }}
-          cp -r ${{ github.workspace }}/out/* tempPortfolio
+          cp -r out/* tempPortfolio
           ls
