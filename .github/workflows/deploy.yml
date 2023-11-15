@@ -60,6 +60,10 @@ jobs:
         name: build-artifact
         path: ${{ github.workspace }}/out
 
+    - name: Show artifact contents
+      run: ls -R ${{ github.workspace }}/out
+
+
     - name: Building Next.js application
       uses: appleboy/ssh-action@master
       with:
