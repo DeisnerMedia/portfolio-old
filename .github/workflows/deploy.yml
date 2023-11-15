@@ -71,6 +71,6 @@ jobs:
           cd public_html
           rm -rf tempPortfolio
           mkdir tempPortfolio
-          cp -r ${{ github.workspace }}/out/* tempPortfolio
+          cp -r ${{ github.workspace }}/out tempPortfolio
           ls
 
