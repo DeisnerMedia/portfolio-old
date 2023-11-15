@@ -53,8 +53,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Download build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifact
+          path: out
+
+      - name: Copy artifacts to tempPortfolio
+        run: |
+          cd public_html
+          rm -rf tempPortfolio
+          mkdir tempPortfolio
+          cp -r ${{ github.workspace }}/out/. tempPortfolio
 
       - name: Building Next.js application
         uses: appleboy/ssh-action@master
@@ -65,4 +75,4 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             ls
-            deploy.sh 
+            ./deploy.sh 
