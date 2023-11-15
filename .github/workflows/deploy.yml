@@ -71,4 +71,5 @@ jobs:
             cd public_html
             rm -rf tempPortfolio
             mkdir tempPortfolio
-            cp -r ${{ github.workspace }}/artifacts/* tempPortfolio
+            ls ${{ github.workspace }}/artifacts  # Füge diese Zeile hinzu, um den Inhalt des Verzeichnisses zu überprüfen
+            cp -r ${{ github.workspace }}/artifacts/. tempPortfolio
